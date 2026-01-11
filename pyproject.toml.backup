@@ -1,0 +1,101 @@
+[project]
+name = "project-name"  # Replace with your project name
+version = "0.1.0"
+description = "Project description"  # Replace with your project description
+authors = [
+    {name = "Your Name", email = "your.email@example.com"}  # Replace with your details
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.10, <3.13"
+dependencies = [
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.4.1",
+    "pytest-cov (>=6.2.1,<7.0.0)",
+    "ruff>=0.12.4",
+    "vulture (>=2.14,<3.0)",
+    "ipykernel>=6.29.5",
+    "ipython>=8.31.0",
+]
+
+# Ruff configuration (from ruff.toml)
+[tool.ruff]
+exclude = [
+    ".bzr",
+    ".direnv", 
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".ipynb_checkpoints",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pyenv",
+    ".pytest_cache",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    ".vscode",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "site-packages",
+    "venv",
+]
+line-length = 79
+indent-width = 4
+target-version = "py313"  # Adjust to match your Python version requirement
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F"]
+ignore = []
+fixable = ["ALL"]
+unfixable = []
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+docstring-code-format = true
+docstring-code-line-length = "dynamic"
+
+# Pytest configuration (from pytest.ini)
+[tool.pytest.ini_options]
+minversion = "6.0"  # Using the version from pytest.ini
+addopts = ["-ra", "-q", "--tb=short", "-v"]
+testpaths = ["tests"]
+pythonpath = ["python"]  # Adjust path as needed for your project structure
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "integration: marks tests as integration tests",
+    "unit: marks tests as unit tests",
+]
+
+# Optional: Coverage configuration
+[tool.coverage.run]
+source = ["src"]  # Adjust to your source directory
+omit = [
+    "*/tests/*",
+    "*/test_*.py",
+    "*/__pycache__/*",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise AssertionError", 
+    "raise NotImplementedError",
+]
+

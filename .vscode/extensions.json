@@ -1,0 +1,20 @@
+{
+    "recommendations": [
+		"ms-python.vscode-pylance",
+        "charliermarsh.ruff",
+        "ms-vscode.vscode-python-debugger",
+        "njpwerner.autodocstring",
+        "saoudrizwan.claude-dev",
+        "aaron-bond.better-comments",
+        "tamasfe.even-better-toml",
+        "github.vscode-github-actions",
+		"GitHub.copilot-chat",
+		"ms-toolsai.datawrangler",
+		"ms-toolsai.jupyter",
+		"mechatroner.rainbow-csv",
+		"ms-python.debugpy",
+		"monokai.theme-monokai-pro-vscode",
+		"ms-toolsai.jupyter-renderers",
+     ],
+    "unwantedRecommendations": []
+}
