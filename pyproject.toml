@@ -1,0 +1,13 @@
+[project]
+name = "gemini-image-retouch"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "google-cloud-storage>=3.7.0",
+    "google-genai>=1.57.0",
+    "pillow>=12.1.0",
+    "python-dotenv>=1.0.0",
+    "tqdm>=4.66.0",
+]
